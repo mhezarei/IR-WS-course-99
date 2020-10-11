@@ -11,10 +11,14 @@ These are the information we have to crawl **every 4 hours**:
 - Event holding time
 - Online/In person?
 - Name of the organizers
+
+
 - Highest ticket price
 - Lowest ticket price
 - Registration due date
 - Event Description
+
+The first four are done by Peyman and the others by me.
 
 ## Implementation Notes
 1. If the crawler sends too many requests in a short amount of time, the server will blacklist the computer ip and will send `403` responses. 
