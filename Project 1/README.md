@@ -11,8 +11,6 @@ These are the information we have to crawl **every 4 hours**:
 - Event holding time
 - Online/In person?
 - Name of the organizers
-
-
 - Highest ticket price
 - Lowest ticket price
 - Registration due date
