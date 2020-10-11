@@ -11,6 +11,7 @@ BOT_NAME = 'part_one'
 
 SPIDER_MODULES = ['part_one.spiders']
 NEWSPIDER_MODULE = 'part_one.spiders'
+FEED_EXPORT_ENCODING = 'utf-8'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
