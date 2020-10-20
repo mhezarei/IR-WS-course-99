@@ -16,20 +16,26 @@ class EventsSpider(scrapy.Spider):
         event_xpath = '//*[@id="root"]/div/div[2]/div[2]/div/div[2]/div/div/section[@*]/div/div/a'
         # there are two possible xpath for next page ( first page and other pages )
         next_url_xpath1 = '//*[@id="root"]/div/div[2]/div[2]/div/div[2]/div/nav/ul/li/a'
-        text_next_page = '//*[@id="root"]/div/div[2]/div[2]/div/div[2]/div/nav/ul/li/a/span'
+        text_next_page1 = '//*[@id="root"]/div/div[2]/div[2]/div/div[2]/div/nav/ul/li/a/span'
+
         next_url_xpath2 = '//*[@id="root"]/div/div[2]/div[2]/div/div[2]/div/nav/ul/li[2]/a'
+        text_next_page2 = '//*[@id="root"]/div/div[2]/div[2]/div/div[2]/div/nav/ul/li[2]/a/span'
 
         # get all events link in a page at first
         events = response.xpath(event_xpath)
-        yield from response.follow_all(events, self.parse_event)
+        for event in events:
+            yield response.follow(url=event, callback=self.parse_event)
 
         # if next page exist it should be crawled as new link
         next_page_url1 = response.xpath(next_url_xpath1)
         next_page_url2 = response.xpath(next_url_xpath2)
 
-        if next_page_url1 is not None and 'صفحه بعد' in response.xpath(text_next_page).get():
+        next_page_text1 = response.xpath(text_next_page1).get()
+        next_page_text2 = response.xpath(text_next_page2).get()
+
+        if next_page_url1 is not None and next_page_text1 is not None and 'صفحه بعد' in next_page_text1:
             yield response.follow(url=next_page_url1[0], callback=self.parse)
-        elif next_page_url2 is not None:
+        elif next_page_url2 is not None and next_page_text2 is not None and 'صفحه بعد' in next_page_text2:
             yield response.follow(url=next_page_url2[0], callback=self.parse)
 
     # a function with extracting html header text functionality
