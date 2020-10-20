@@ -1,10 +1,20 @@
 import scrapy
 import re
-from ..items import Event
+
+from scrapy.crawler import CrawlerProcess
+from scrapy.utils.project import get_project_settings
+
+
+# an event Object
+class Event(scrapy.Item):
+    event_title = scrapy.Field()
+    holding_time = scrapy.Field()
+    holding_status = scrapy.Field()
+    holder = scrapy.Field()
 
 
 class EventsSpider(scrapy.Spider):
-    name = "events"
+    name = "events_spider"
     allowed_domains = ['evand.com']
 
     def start_requests(self):
@@ -74,3 +84,9 @@ class EventsSpider(scrapy.Spider):
         item['holder'] = holder
 
         yield item
+
+
+if __name__ == '__main__':
+    process = CrawlerProcess(settings=get_project_settings())
+    process.crawl(EventsSpider)
+    process.start()

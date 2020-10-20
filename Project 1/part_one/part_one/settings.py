@@ -13,7 +13,7 @@ SPIDER_MODULES = ['part_one.spiders']
 NEWSPIDER_MODULE = 'part_one.spiders'
 FEED_EXPORT_ENCODING = 'utf-8'
 DUPEFILTER_CLASS = 'scrapy.dupefilters.BaseDupeFilter'
-
+ITEM_PIPELINES = {'part_one.pipelines.JsonPipeline': 30}
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'part_one (+http://www.yourdomain.com)'
