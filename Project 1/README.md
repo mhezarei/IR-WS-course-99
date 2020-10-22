@@ -27,6 +27,9 @@ convert the characters to `utf-8` and then save them in the database.
 
 3. We need to add a `requirements.txt`, a report in `.pdf` (which contains some information about the code plus some screenshots), and a good document.
 
+---
 
 All the Information about how this works are given in the docstrings of most of the function.
+
+## Running the program
 To run the program, run the `run.py` file. Remember to install the `requirements.txt` beforehand.
