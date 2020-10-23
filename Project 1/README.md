@@ -1,7 +1,7 @@
 # First Project
-In this project, we are going to crawl a webpage to some information which we are going to use later for creating a simple search engine.
+In this project, we are crawling a webpage to gather some information which is going be later used for creating a simple search engine.
 
-The crawled information have to gathered in a `.json` file.
+The crawled information is saved in a `.json` file and in mongoDB.
 
 ## Project Description
 The webpage assigned to our team is [`https://evand.com/categories/تکنولوژی`](https://evand.com/categories/%D8%AA%DA%A9%D9%86%D9%88%D9%84%D9%88%DA%98%DB%8C) which shows all the technology-related events held in the [`evand.com`](https://evand.com/) website.
@@ -32,7 +32,7 @@ convert the characters to `utf-8` and then save them in the database.
 All the Information about how this works are given in the docstrings of most of the function.
 
 ## Running the program
-To run the program, run the `run.py` file. Remember to install the `requirements.txt` beforehand.
+To start the program, run the `run.py` file. Remember to install the `requirements.txt` beforehand.
 
 Since the output will be saved in mongoDB, make sure that your `mongod` service is active (running).
 
