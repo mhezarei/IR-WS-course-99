@@ -36,4 +36,4 @@ To run the program, run the `run.py` file. Remember to install the `requirements
 
 Since the output will be saved in mongoDB, make sure that your `mongod` service is active (running).
 
-__TODO:__ Add the command-line arguemnt to control saving into database.
+__TODO:__ Add a command-line argument to control saving into database.
