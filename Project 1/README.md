@@ -33,3 +33,7 @@ All the Information about how this works are given in the docstrings of most of 
 
 ## Running the program
 To run the program, run the `run.py` file. Remember to install the `requirements.txt` beforehand.
+
+Since the output will be saved in mongoDB, make sure that your `mongod` service is active (running).
+
+__TODO:__ Add the command-line arguemnt to control saving into database.
