@@ -14,8 +14,8 @@ class EventsSpider(scrapy.Spider):
 	
 	def parse(self, response, **kwargs):
 		"""
-		Main parser. Retrieves 'تکنولوژی' page response and parses all of the
-		events listed there via `parse_event` function.
+		Main parser. Retrieves the 'تکنولوژی' page response and parses all of the
+		events listed there via the `parse_event` function.
 
 		:param response: Response of the page which is scrapy.http.Response().
 		:param kwargs: Arbitrary keyword arguments.
@@ -128,7 +128,7 @@ class EventsSpider(scrapy.Spider):
 	@staticmethod
 	def indicate_holding_status(text: str) -> str:
 		"""
-		The persian text shows how to event will be held, either Online or
+		The persian text shows how the event will be held, either Online or
 		In-place. If the persian text is 'آنلاین', then we will return 'Online'.
 		Otherwise, 'In-Person' is returned.
 
